@@ -33,11 +33,13 @@ model Resume {
   country   String?
   phone     String?
   email     String?
-  
-  WorkExperience WorkExperience[]
 
-  createdAt      DateTime         @default(now())
-  updatedAt      DateTime         @default(now())
+  WorkExperience WorkExperience[]
+  Education      Education[]
+  skills         String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 
   @@map("resumes")
 }
@@ -58,4 +60,21 @@ model WorkExperience {
   updatedAt DateTime @updatedAt
 
   @@map("work_experiences")
+}
+
+model Education {
+  id String @id @default(cuid())
+
+  degree    String?
+  school    String?
+  startDate DateTime?
+  endDate   DateTime?
+
+  resumeId String
+  resume   Resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("educations")
 }
