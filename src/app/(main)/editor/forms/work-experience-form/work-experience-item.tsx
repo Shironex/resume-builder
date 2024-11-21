@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { WorkExperienceValues } from "@/lib/validation";
@@ -9,19 +16,14 @@ import { UseFormReturn } from "react-hook-form";
 import { CSS } from "@dnd-kit/utilities";
 import { cn } from "@/lib/utils";
 
-interface WorkExperienceItemProps {
+type Props = {
   id: string;
   form: UseFormReturn<WorkExperienceValues>;
   index: number;
   remove: (index: number) => void;
-}
+};
 
-const WorkExperienceItem = ({
-  id,
-  form,
-  index,
-  remove,
-}: WorkExperienceItemProps) => {
+const WorkExperienceItem = ({ id, form, index, remove }: Props) => {
   const {
     attributes,
     listeners,

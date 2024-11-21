@@ -14,14 +14,14 @@ import { EducationValues } from "@/lib/validation";
 import { useSortable } from "@dnd-kit/sortable";
 import { Button } from "@/components/ui/button";
 
-interface EducationItemProps {
+type Props = {
   id: string;
   form: UseFormReturn<EducationValues>;
   index: number;
   remove: (index: number) => void;
 }
 
-const EducationItem = ({ id, form, index, remove }: EducationItemProps) => {
+const EducationItem = ({ id, form, index, remove }: Props) => {
   const {
     attributes,
     listeners,
