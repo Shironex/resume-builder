@@ -1,12 +1,12 @@
 import { Metadata } from "next";
-import EditorClientPage from "./client-page";
+import EditorBuilder from "./editor";
 
 export const metadata: Metadata = {
   title: "Design your resume",
 };
 
 const EditorPage = () => {
-  return <EditorClientPage />;
+  return <EditorBuilder />;
 };
 
 export default EditorPage;

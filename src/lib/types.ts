@@ -8,6 +8,6 @@ export interface EditorFormProps {
 
 export interface Steps {
   title: string;
-  component: ComponentType;
+  component: ComponentType<EditorFormProps>;
   key: string;
 }
