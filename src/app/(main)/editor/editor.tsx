@@ -6,6 +6,7 @@ import { steps } from "./_components/steps";
 import Breadcrumbs from "./_components/bread-crumbs";
 import Footer from "./_components/footer";
 import { ResumeValues } from "@/lib/validation";
+import ResumePreviewSection from "./_components/resume-preview-section";
 
 const EditorBuilder = () => {
   const searchParams = useSearchParams();
@@ -47,7 +48,11 @@ const EditorBuilder = () => {
 
           <div className="grow md:border-r" />
 
-          <div className="hidden w-1/2 md:flex">rigt</div>
+          <ResumePreviewSection
+            resumeData={resumeData}
+            setResumeData={SetResumeData}
+            ClassName="hidden md:block"
+          />
         </div>
       </main>
 
